@@ -49,7 +49,7 @@ jobs:
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
         run: |
-          sudo apt install -y pandoc
+          sudo apt install -y pandoc texlive-base
           ./build.sh
           hugo \
             --minify \

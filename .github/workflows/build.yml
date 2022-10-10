@@ -43,11 +43,8 @@ jobs:
         uses: actions/configure-pages@v2
       - name: Build with Hugo
         run: |
-          sudo apt install -y pandoc texlive-base texlive-latex-recommended hugo
+          sudo apt install -y pandoc texlive-base texlive-latex-recommended texlive-latex-extra hugo
           ./build.sh
-          hugo \
-            --minify \
-            --baseURL "${{ steps.pages.outputs.base_url }}/"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:

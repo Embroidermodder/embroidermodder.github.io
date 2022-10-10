@@ -47,4 +47,4 @@ pandoc -o $DOCS_/libembroidery_0.1_manual.pdf $DOCS_/libembroidery.md
 pandoc -o $DOCS_/embroidermodder_2.0.0-alpha_manual.pdf $DOCS_/manual.md
 pandoc -o $DOCS_/embroiderbot_0.1_manual.pdf $DOCS_/embroiderbot.md
 
-hugo --minify --baseURL "www.libembroidery.org/"
+hugo --minify

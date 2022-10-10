@@ -1,0 +1,6 @@
+[submodule "embroidermodder"]
+	path = embroidermodder
+	url = https://github.com/Embroidermodder/embroidermodder
+[submodule "libembroidery"]
+	path = libembroidery
+	url = https://github.com/Embroidermodder/libembroidery

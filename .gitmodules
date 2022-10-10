@@ -4,3 +4,6 @@
 [submodule "libembroidery"]
 	path = libembroidery
 	url = https://github.com/Embroidermodder/libembroidery
+[submodule "themes/hugo-book"]
+	path = themes/hugo-book
+	url = https://github.com/alex-shpak/hugo-book

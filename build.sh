@@ -43,9 +43,8 @@ cat libembroidery/README.md >> $DOCS_/libembroidery.md
 cat libembroidery/EmbroiderBot/README.md >> $DOCS_/embroiderbot.md
 cat embroidermodder/README.md >> $DOCS_/embroidermodder.md
 
-cd $DOCS_
+pandoc -o $DOCS_/libembroidery_0.1_manual.pdf $DOCS_/libembroidery.md
+pandoc -o $DOCS_/embroidermodder_2.0.0-alpha_manual.pdf $DOCS_/manual.md
+pandoc -o $DOCS_/embroiderbot_0.1_manual.pdf $DOCS_/embroiderbot.md
 
-pandoc -o libembroidery_0.1_manual.pdf libembroidery.md
-pandoc -o embroidermodder_2.0.0-alpha_manual.pdf manual.md
-pandoc -o embroiderbot_0.1_manual.pdf embroiderbot.md
-
+hugo --minify --baseURL "www.libembroidery.org/"

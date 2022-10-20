@@ -62,4 +62,6 @@ pandoc -o embroidermodder_2.0.0-alpha_manual.pdf \
 pandoc -o embroiderbot_0.1_manual.pdf \
     embroiderbot_manual/_index.md
 
+cd ../..
+
 hugo --minify

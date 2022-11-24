@@ -1,5 +1,9 @@
 #!/bin/bash
 
+function build_manual () {
+pandoc -o $1 -H header.tex $2
+}
+
 git clone https://github.com/embroidermodder/embroidermodder
 git clone https://github.com/embroidermodder/libembroidery
 
@@ -47,12 +51,12 @@ cp -R ../../libembroidery/images libembroidery_manual
 cp -R ../../libembroidery/EmbroiderBot/images embroiderbot_manual
 cp -R ../../embroidermodder/images embroidermodder_manual
 
-pandoc -o libembroidery_0.1_manual.pdf \
-    libembroidery_manual/_index.md
-pandoc -o embroidermodder_2.0.0-alpha_manual.pdf \
-    embroidermodder_manual/_index.md
-pandoc -o embroiderbot_0.1_manual.pdf \
-    embroiderbot_manual/_index.md
+build_manual libembroidery_0.1_manual.pdf \
+    ../../libembroidery/README.md
+build_manual embroidermodder_2.0.0-alpha_manual.pdf \
+     ../../embroidermodder/README.md
+build_manual embroiderbot_0.1_manual.pdf \
+    ../../libembroidery/EmbroiderBot/README.md
 
 cd ../..
 

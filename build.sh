@@ -1,15 +1,7 @@
 #!/bin/bash
 
-git submodule init
-git submodule update
-
-cd embroidermodder
-git pull origin main
-cd ..
-
-cd libembroidery
-git pull origin main
-cd ..
+git clone https://github.com/embroidermodder/embroidermodder
+git clone https://github.com/embroidermodder/libembroidery
 
 cd content/docs
 

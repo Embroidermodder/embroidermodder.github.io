@@ -7,7 +7,7 @@ function detect_missing_library() {
     if [ `dpkg -s $1 | wc -l` -eq 0 ]; then
         echo "Attempting to install missing library $1."
         sudo apt-get update
-        sudo apt-get install libx11-dev
+        sudo apt-get install $1
     fi
 }
 
@@ -15,33 +15,30 @@ rm -fr Embroidermodder
 
 git clone https://github.com/Embroidermodder/Embroidermodder
 cd Embroidermodder
-git submodule init
-git submodule update
-
-CC=gcc
-CFLAGS="-O2 -g -Wall -std=c99 -Isrc/libembroidery/src"
-SRC=src/libembroidery/src/*.c src/*.c
+git submodule update --init --recursive
 
 case "$(uname -s)" in
 Linux*)
-    detect_missing_library libx11-dev
+    detect_missing_library libfreetype6-dev
     detect_missing_library build-essential
-    detect_missing_library make
-    make
+    detect_missing_library cmake
     ;;
 Darwin*)
-    make
+    echo "FIXME: Needs macports line."
     ;;
 CYGWIN*)
-    $CC $CFLAGS -municode $SRC -o embroidermodder -lGdi32
+    echo "FIXME: Needs library install for CYGWIN."
     ;;
 MINGW*)
-    $CC $CFLAGS -municode $SRC -o embroidermodder -lGdi32
+    echo "FIXME: Needs library install for MINGW."
     ;;
 *)
-    echo "Unrecognised system: building as X11."
-    $CC $CFLAGS $SRC -o embroidermodder -lX11 -lm
+    echo "Unrecognised system: building libraries from source."
 esac
 
-timeout 10 ./embroidermodder --test &> test_results.txt
+mkdir build
+cd build
+cmake ..
+cmake --build .
 
+timeout 10 ./embroidermodder --test &> test_results.txt

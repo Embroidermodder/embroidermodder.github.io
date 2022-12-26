@@ -10,7 +10,7 @@ weight = 0
 
 The _Embroidermodder 2_ project is a collection of small software utilities for
 manipulating, converting and creating embroidery files in all major embroidery
-machine formats. The program \textit{Embroidermodder 2} itself is a larger graphical
+machine formats. The program _Embroidermodder 2_ itself is a larger graphical
 user interface (GUI) which is at the heart of the project.
 
 The tools and associated documents are:
@@ -27,7 +27,7 @@ The tools and associated documents are:
 They all tools to make the standard
 user experience of working with an embroidery machine better without expensive
 software which is locked to specific manufacturers and formats. But ultimately
-we hope that the core \textit{Embroidermodder 2} is a practical, ever-present tool in
+we hope that the core _Embroidermodder 2_ is a practical, ever-present tool in
 larger workshops, small cottage industry workshops and personal hobbyist's
 bedrooms.
 
@@ -47,21 +47,6 @@ The full list is actively maintained below.
 
 Please note that this file in not in alphabetical order. If you have contributed and wish to be added to this list, create a new credit section and increment the number. Fill it in with your information and submit it to us.
 
-Here is a summary of the values used:
-
-| Label | Description |
-|---|---|
-| Name | The full name of the contributor starting with first name. |
-| `GitHub` | The GitHub account name of the contributor. |
-| CoreDeveloper | This is reserved for long term contributors. |
-| Documentation | If you have contributed changes to README files or help files, set this to true. |
-| Artwork | If you have contributed artwork or related changes, set this to true. |
-| BugFixes | If you have contributed bug fixes or added new features, set this to true. |
-| Translation | If you have provided language translations, set this to true. |
-| Designs | If you have contributed an embroidery design sample, set this to true. |
-| Bindings | If you have contributed programming language bindings for libembroidery, set this to true. |
-| Commands | If you have contributed a command for Embroidermodder 2, set this to true. |
-
 * Jonathan Greig `redteam316` (Core Developer, Artwork, Documentation, Designs, Commands)
 * Josh Varga `JoshVarga` (Core Developer)
 * Jens Diemer `jedie` (Documentation)
@@ -74,7 +59,7 @@ Here is a summary of the values used:
 * Nina Paley (Designs)
 * Theodore Gray (Designs)
 * Jens-Wolfhard Schicke-Uffmann `Drahflow` (Bug Fixes)
-* Emmett Lauren Garlitz - Some Little Sandy Rd, Elkview, West by GOD Virginia `Oll Em` "I have a nice cherry chess-top(Glass). But remember, I NEVER played on it."_
+* Emmett Lauren Garlitz - Some Little Sandy Rd, Elkview, West by GOD Virginia `Oll Em` _"I have a nice cherry chess-top(Glass). But remember, I NEVER played on it."_
 * Robin Swift `robin-swift` (Core Developer, Documentation)
 
 ## Path to Beta Release
@@ -84,7 +69,7 @@ now on hobbyists hours and he feels it's getting close to the stage where other 
 defined challenges. Also the design of the software, which has mostly carried over from the other 3 core developers,
 is also almost ready to be tested in this way. So with that he's making this clear statement of intent:
 
-> *Embroidermodder 2.0.0 beta and regularly updated developer builds will be ready before 2023.*
+> *Embroidermodder 2.0.0 beta and regularly updated developer builds will be ready before March 2023.*
 > 
 > Robin Swift, writing November 2022
 
@@ -133,8 +118,6 @@ but I'd advise you read this section first to get used to the scope of the probl
 * Layer manager and Layer switcher dock widget
 * test that all formats read data in correct scale (format details should match other programs).
 * Custom filter bug -- doesn't save changes in some cases.
-* Get flake8, pylint and tests to pass.
-* Sphinx documentation from docstrings or similar.
 
 For more details read on into the Design section.
 
@@ -142,52 +125,41 @@ So I've had a few pieces of web infrastructure fail me recently and I
 think it's worth noting. An issue that affects us is an issue that can
 effect people who use our software.
 
-* Googletests require a web connection to update and they update on each compilation.
-* Downloading and installing Qt has been a pain for some users (46Gb on possibly slow connections). I think it was davieboy64?
-* Github is giving me a server offline (500) error and is still giving a bad ping.
-* OpenGL rendering within the application. This will allow for Realistic Visualization - Bump Mapping/OpenGL/Gradients?
-* JSON configuration (Started, see \texttt{head\ -n\ 50\ src/mainwindow.cpp.}) Ok this is changing slightly. embroidermodder should boot from the command line regardless of whether it is or is not installed (this helps with testing and running on machines without root). Therefore, it can create an initiation file but it won't rely on its existence to boot: this is what we currently do with settings.ini.
-* Get undo history widget back (BUG).
-* Switch website to a CMake build.
-* Mac Bundle, .tar.gz and .zip source archive.
-* NSIS installer for Windows, Debian package, RPM package
-* GUI frontend for embroider features that aren't supported by  embroidermodder: flag selector from a table
-
 1. Googletests require a web connection to update and they update on each compilation.
 2. Downloading and installing Qt has been a pain for some users (46Gb on possibly slow connections). I think it was davieboy64?
-3. The documentation is, well better in that it's housed in the main repository, but I'm not a fan of the ``write once build many'' approach as it means trying to weigh up how 3 versions are going to render.
+3. The documentation is, well better in that it's housed in the main repository, but I'm not a fan of the "write once build many" approach as it means trying to weigh up how 3 versions are going to render.
 4. Github is giving me a server offline (500) error and is still giving a bad ping.
 5. OpenGL rendering within the application. This will allow for Realistic Visualization - Bump Mapping/OpenGL/Gradients?
-6. JSON configuration (Started, see `head\ -n\ 50\ src/mainwindow.cpp`.) Ok this is changing slightly. embroidermodder should boot from the command line regardless of whether it is or is not installed (this helps with testing and running on machines without root). Therefore, it can create an initiation file but it won't rely on its existence to boot: this is what we currently do with settings.ini.
-7.  Get undo history widget back (BUG).
-8.  Switch website to a CMake build.
-9.  Mac Bundle, .tar.gz and .zip source archive.
-10.  NSIS installer for Windows, Debian package, RPM package
-11.  GUI frontend for embroider features that aren't supported by embroidermodder: flag selector from a table
-12.  Update all formats without color to check for edr or rgb files.
-13.  EmbroideryFLOSS - Color picker that displays catalog numbers and names
-14.  Setting for reverse scrolling direction (for zoom, vertical pan)
-15. Stitching simulation
-16.  User designed custom fill
-17.  Keyboard zooming, panning
-18.  Advanced printing
-19.  Libembroidery 1.0
-20. Better integrated help: I don't think the help should backend to a html file somewhere on the user's system. A better system would be a custom widget within the program that's searchable.
-21. New embroidermodder2.ico 16x16 logo that looks good at that scale.
-22. saving dst, pes, jef
-23. Settings dialog: notify when the user is switching tabs that the setting has been changed, adding apply button is what would make sense for this to happen.
-24.  Update language translations
-25.  Replace KDE4 thumbnailer.
-26.  Import raster image
-27.  Statistics from 1.0, needs histogram.
-28.  SNAP/ORTHO/POLAR
-29.  Cut/copy allow post-selection
-30.  Layout into config
-31.  Notify user of data loss if not saving to an object format.
-32.  Add which formats to work with to preferences.
-33.  Cannot open file with \# in the name when opening multiple files but works with opening a single file.
-34.  Closing settings dialog with the X in the window saves settings rather than discarding them.
-35. Otto theme icons: units, render, selectors, what's this icon doesn't  scale
-36. Layer manager and Layer switcher dock widget
-37. Test that all formats read data in correct scale (format details should match other programs).
-38.  Custom filter bug -- doesn't save changes in some cases.
+6. Initiation files. Ok this is changing slightly. embroidermodder should boot from the command line regardless of whether it is or is not installed (this helps with testing and running on machines without root). Therefore, it can create an initiation file but it won't rely on its existence to boot: this is what we currently do with settings.ini.
+8. Get undo history widget back (BUG).
+9. Switch website to a CMake build.
+10. Mac Bundle, .tar.gz and .zip source archive.
+11. NSIS installer for Windows, Debian package, RPM package
+12. GUI frontend for embroider features that aren't supported by embroidermodder: flag selector from a table
+13.  Update all formats without color to check for edr or rgb files.
+14.  EmbroideryFLOSS - Color picker that displays catalog numbers and names
+15.  Setting for reverse scrolling direction (for zoom, vertical pan)
+16. Stitching simulation
+17.  User designed custom fill
+18.  Keyboard zooming, panning
+19.  Advanced printing
+20.  Libembroidery 1.0
+21. Better integrated help: I don't think the help should backend to a html file somewhere on the user's system. A better system would be a custom widget within the program that's searchable.
+22. New embroidermodder2.ico 16x16 logo that looks good at that scale.
+23. saving dst, pes, jef
+24. Settings dialog: notify when the user is switching tabs that the setting has been changed, adding apply button is what would make sense for this to happen.
+25.  Update language translations
+26.  Replace KDE4 thumbnailer.
+27.  Import raster image
+28.  Statistics from 1.0, needs histogram.
+29.  SNAP/ORTHO/POLAR
+30.  Cut/copy allow post-selection
+31.  Layout into config
+32.  Notify user of data loss if not saving to an object format.
+33.  Add which formats to work with to preferences.
+34.  Cannot open file with \# in the name when opening multiple files but works with opening a single file.
+35.  Closing settings dialog with the X in the window saves settings rather than discarding them.
+36. Otto theme icons: units, render, selectors, what's this icon doesn't  scale
+37. Layer manager and Layer switcher dock widget
+38. Test that all formats read data in correct scale (format details should match other programs).
+39.  Custom filter bug -- doesn't save changes in some cases.

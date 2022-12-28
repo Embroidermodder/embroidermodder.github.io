@@ -53,6 +53,8 @@ cp -R ../../embroidermodder/images embroidermodder_manual
 
 cd ../..
 
+sed -i /badge.svg/d embroidermodder/README.md
+
 build_manual static/libembroidery_0.1_manual.pdf libembroidery/README.md
 build_manual static/embroidermodder_2.0.0-alpha_manual.pdf embroidermodder/README.md
 build_manual static/embroiderbot_0.1_manual.pdf libembroidery/EmbroiderBot/README.md
